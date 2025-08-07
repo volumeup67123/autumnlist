@@ -1,0 +1,72 @@
+.main-page {
+  min-height: 100vh;
+  background-color: #e8dbcb;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 三条杠菜单按钮 */
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 200;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.menu-btn:hover {
+  background: rgba(179, 154, 134, 0.2);
+}
+
+.menu-icon {
+  width: 24px;
+  height: 18px;
+  position: relative;
+}
+
+.menu-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #b39a86;
+  margin-bottom: 4px;
+  border-radius: 1px;
+  transition: all 0.3s;
+}
+
+.menu-icon span:last-child {
+  margin-bottom: 0;
+}
+
+/* 移除了固定的标题区域，现在标题是可拖拽的贴纸 */
+
+/* 贴纸板区域 */
+.sticker-board-container {
+  position: relative;
+  min-height: 100vh;
+  padding: 20px;
+  padding-top: 80px; /* 为菜单按钮留出空间 */
+  overflow-y: auto;
+  /* 动态计算高度，确保有足够空间放置所有贴纸 */
+  min-height: calc(100vh + 500px);
+}
+
+.empty-state {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #8B4513;
+  font-size: 1.1rem;
+  opacity: 0.7;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}

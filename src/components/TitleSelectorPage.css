@@ -1,0 +1,128 @@
+.title-selector-page {
+  min-height: 100vh;
+  background-color: #e8dbcb;
+}
+
+.selector-page-header {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #8B4513;
+  transition: background 0.2s;
+  margin-right: 15px;
+}
+
+.back-btn:hover {
+  background: rgba(139, 69, 19, 0.1);
+}
+
+.selector-page-header h1 {
+  color: #8B4513;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 300;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Avenir Next', sans-serif;
+}
+
+.selector-page-content {
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 移除了描述文字的样式 */
+
+.logo-grid {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.logo-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.logo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border-color: rgba(139, 69, 19, 0.3);
+}
+
+.logo-card.selected {
+  border-color: #8B4513;
+  background: rgba(232, 213, 183, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+}
+
+.logo-preview-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.logo-preview-large {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+.selected-badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #8B4513;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* 移除了标题描述的样式 */
+
+/* 手机端优化 */
+@media (max-width: 768px) {
+  .selector-page-content {
+    padding: 20px 15px;
+  }
+  
+  .logo-card {
+    padding: 20px;
+  }
+  
+  .logo-preview-large {
+    max-width: 200px;
+  }
+}

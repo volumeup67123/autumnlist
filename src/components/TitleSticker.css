@@ -1,0 +1,36 @@
+.title-sticker {
+  user-select: none;
+  touch-action: none;
+  transform-origin: center center;
+  z-index: 50;
+  /* 强制硬件加速，减少渲染问题 */
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.title-logo-draggable {
+  max-width: 280px;
+  width: 280px;
+  height: auto;
+  /* 用 drop-shadow 跟随图片形状，但减少强度避免痕迹 */
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+  transition: filter 0.2s ease;
+}
+
+.title-sticker:hover .title-logo-draggable:not(.dragging) {
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.12));
+}
+
+/* 拖拽时移除阴影，避免留下痕迹 */
+.title-logo-draggable.dragging {
+  filter: none !important;
+  opacity: 0.9;
+}
+
+/* 手机端适配 */
+@media (max-width: 768px) {
+  .title-logo-draggable {
+    width: 240px;
+    max-width: 240px;
+  }
+}
