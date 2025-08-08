@@ -7,7 +7,9 @@ const TitleSelectorPage = () => {
   
   const logoOptions = [
     { id: 'logo1', src: '/Logo1.png' },
-    { id: 'logo2', src: '/logo2.png' }
+    { id: 'logo2', src: '/logo2.png' },
+    { id: 'logo3', src: '/Logo3.png' },
+    { id: 'logo4', src: '/Logo4.png' }
   ]
 
   const currentLogo = localStorage.getItem('selectedLogo') || '/Logo1.png'

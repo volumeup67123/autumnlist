@@ -4,8 +4,12 @@ import './TitleSelector.css'
 const TitleSelector = ({ isOpen, currentLogo, onSelect, onClose }) => {
   const logoOptions = [
     { id: 'logo1', src: '/Logo1.png', name: 'Autumn Bucket List - 经典版' },
-    { id: 'logo2', src: '/logo2.png', name: 'Autumn Bucket List - 风格2' }
+    { id: 'logo2', src: '/logo2.png', name: 'Autumn Bucket List - 风格2' },
+    { id: 'logo3', src: '/Logo3.png', name: 'Autumn Bucket List - 风格3' },
+    { id: 'logo4', src: '/Logo4.png', name: 'Autumn Bucket List - 风格4' }
   ]
+
+  console.log('TitleSelector logoOptions:', logoOptions)
 
   if (!isOpen) return null
 
@@ -14,7 +18,7 @@ const TitleSelector = ({ isOpen, currentLogo, onSelect, onClose }) => {
       <div className="title-selector-overlay" onClick={onClose} />
       <div className="title-selector">
         <div className="selector-header">
-          <h3>选择标题样式</h3>
+          <h3>选择标题样式 (共{logoOptions.length}个) - {new Date().getTime()}</h3>
           <button className="close-selector-btn" onClick={onClose}>×</button>
         </div>
         
